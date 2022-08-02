@@ -5,14 +5,6 @@ const App: Component = () => {
      <div>
         <div class="box is-flex is-flex-direction-column is-align-items-center">
             <div class="field">
-                <label class="label">Name</label>
-                <div class="control">
-                    <input class="input column" type="text" placeholder="Text input">
-                    </input>
-                </div>
-            </div>
-
-            <div class="field">
               <label class="label">Username</label>
               <div class="control has-icons-left has-icons-right">
                 <input class="input is-success column" type="text" placeholder="Text input">
@@ -40,6 +32,24 @@ const App: Component = () => {
                 </span>
               </div>
               <p class="help is-danger">This email is invalid</p>
+            </div>
+            <div class="field">
+              <label class="label">Password</label>
+              <p class="control has-icons-left">
+                <input class="input" id="password" type="password" placeholder="Password"></input>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <label class="label">Confirm Password</label>
+              <p class="control has-icons-left">
+                <input class="input" id="confirmPassword" type="password" placeholder="Confirm Password"></input>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </p>
             </div>
         </div>
     </div>
