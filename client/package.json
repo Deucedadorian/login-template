@@ -14,8 +14,6 @@
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
-    "mongodb": "^4.8.1",
-    "mongoose": "^6.5.0",
     "solid-js": "^1.4.7"
   }
 }
