@@ -51,6 +51,7 @@ const App: Component = () => {
                 </span>
               </p>
             </div>
+            <input class="button" type="submit" value="Sign Up"></input>
         </div>
     </div>
   );
