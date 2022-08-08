@@ -1,23 +1,12 @@
-import { createSignal, onCleanup, Component } from 'solid-js';
-
-const App: Component = () => {
-    
-    const [validEmail, setValidEmail] = createSignal(false);
-    
+const App = () => {
     const ValidateEmail = (inputText) => {
-        let emailEl = (document.querySelector("#email") as HTMLInputElement);
-    	let mailformat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-
-	    if(emailEl.value.match(mailformat)) {
-            setValidEmail(true);
-		} else {
-            setValidEmail(false);
+        let mailformat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (inputText.value.match(mailformat)) {
+            alert("This is not a valid email address");
+            return false;
         }
-        console.log(validEmail());
-    }
-
-    return (
-         <div>
+    };
+    return (<div>
             <div class="box is-flex is-flex-direction-column is-align-items-center">
                 <div class="field">
                   <label class="label">Username</label>
@@ -37,28 +26,16 @@ const App: Component = () => {
                 <div class="field">
                   <label class="label">Email</label>
                   <div class="control has-icons-left has-icons-right">
-                    <input 
-                        class="input is-danger column" 
-                        id="email" 
-                        type="email" 
-                        placeholder="Email input"
-                        onChange={ValidateEmail}>
-
+                    <input class="input is-danger column" type="email" placeholder="Email input">
                     </input>
                     <span class="icon is-small is-left">
                       <i class="fas fa-envelope"></i>
                     </span>
-                    { validEmail() ? '' :
-                        <span class="icon is-small is-right">
-                          <i class="fas fa-exclamation-triangle"></i>
-                        </span>
-                    }
+                    <span class="icon is-small is-right">
+                      <i class="fas fa-exclamation-triangle"></i>
+                    </span>
                   </div>
-                { 
-                    validEmail() ?
-                        <p class="help is-success">this email is valid</p> :
-                        <p class="help is-danger">This email is invalid</p>
-                } 
+                  <p class="help is-danger">This email is invalid</p>
                 </div>
                 <div class="field">
                   <label class="label">Password</label>
@@ -78,17 +55,8 @@ const App: Component = () => {
                     </span>
                   </p>
                 </div>
-                {
-                    validEmail() ? <input 
-                        class="button" 
-                        type="submit" 
-                        value="Sign Up"></input> : (
-                        <input class="button" type="submit" disabled value="Sign Up"></input>
-                    )
-                }
+                <input class="button" type="submit" value="Sign Up"></input>
            </div>
-       </div>
-    );
+       </div>);
 };
-
 export default App;
